@@ -1,0 +1,15 @@
+{
+  "name": "zakaz-stores-api",
+  "version": "0.0.1",
+  "description": "Third-party analog of zakaz-stores-api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "3.6.3",
+    "node-fetch": "^2.6.1"
+  }
+}
