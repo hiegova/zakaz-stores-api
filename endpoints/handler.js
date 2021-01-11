@@ -1,7 +1,7 @@
 const cities = require('./cities');
-const lists = require('./lists');
+const lists = require('./user/lists');
 
-function initRoutesHandlers(app) {
+function installRoutesHandlers(app) {
   app.get('/', (req, res) => {
     res.setHeader('Content-Type', 'text/plain');
     res.end('Zakaz stores API version 0.0.1\n');
@@ -17,4 +17,4 @@ function initRoutesHandlers(app) {
   });
 }
 
-module.exports = initRoutesHandlers;
+module.exports = installRoutesHandlers;

@@ -1,6 +1,6 @@
-const { getDb } = require('../db');
+const { getDb } = require('../../../db');
 
-async function lists(req, res) {
+async function getLists(req, res) {
   // const db = getDb();
   // const method = req.method;
 
@@ -17,4 +17,4 @@ async function lists(req, res) {
 
 }
 
-module.exports = lists;
+module.exports = getLists;

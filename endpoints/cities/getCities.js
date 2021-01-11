@@ -1,9 +1,6 @@
-const { getDb } = require('../db');
+const { getDb } = require('../../db');
 
-function cities(app) {
-  app.get('/cities', citiesHandler);
-}
-async function citiesHandler(req, res) {
+async function getCities(req, res) {
   const db = getDb();
   const chain = req.headers['x-chain'];
   const language = req.headers['accept-language'] || 'en';
@@ -31,4 +28,4 @@ async function citiesHandler(req, res) {
   res.end(JSON.stringify(responseCities));
 }
 
-module.exports = cities;
+module.exports = getCities;
