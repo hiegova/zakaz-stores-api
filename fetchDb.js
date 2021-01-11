@@ -157,5 +157,7 @@ async function updateCities() {
     console.log('🚀 database fetching completed');
   } catch (err) {
     console.log('ERROR: (main)', err);
+  } finally {
+    process.exit();
   }
 })();

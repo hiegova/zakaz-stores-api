@@ -1,6 +1,9 @@
 const { getDb } = require('../db');
 
-async function cities(req, res) {
+function cities(app) {
+  app.get('/cities', citiesHandler);
+}
+async function citiesHandler(req, res) {
   const db = getDb();
   const chain = req.headers['x-chain'];
   const language = req.headers['accept-language'] || 'en';
@@ -24,7 +27,7 @@ async function cities(req, res) {
     });
   }
 
-  res.writeHead(200, { 'Content-Type': 'application/json' });
+  res.setHeader('Content-Type', 'application/json');
   res.end(JSON.stringify(responseCities));
 }
 

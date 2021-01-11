@@ -1,21 +1,21 @@
-const http = require('http');
+const express = require('express');
 const { connectToDb } = require('./db.js');
-const handleApi = require('./endpoints/handler');
+const initRoutesHandlers = require('./endpoints/handler');
+
+const app = express();
 
 const port = 3001;
-const server = new http.Server();
+
+initRoutesHandlers(app);
 
 (async function start() {
   try {
     await connectToDb();
 
-    server.listen(port, '127.0.0.1');
-    console.log(`API server started at localhost:${port}`);
+    app.listen(port, () => {
+      console.log(`🚀 API server started at http://localhost:${port}`);
+    });
   } catch (err) {
     console.log('ERROR:', err);
   }
 })();
-
-server.on('request', (req, res) => {
-  handleApi(req, res);
-});
